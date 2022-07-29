@@ -1,0 +1,28 @@
+inherits:
+  - redis_extend
+databases:
+  1:
+    keys:
+      $extend: childKeys
+      values:
+        key1:
+          value: value1
+        key2:
+          expiration: 10s
+          value: value2
+    sets:
+      values:
+        set1:
+          $extend: childSet
+    maps:
+      values:
+        map1:
+          $extend: baseMap
+          values:
+            x: 10
+            y: 11
+        map2:
+          $extend: childMap
+          values:
+            t: 500
+            j: 1000

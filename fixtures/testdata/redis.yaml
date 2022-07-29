@@ -1,0 +1,59 @@
+databases:
+  1:
+    keys:
+      values:
+        key1:
+          value: value1
+        key2:
+          expiration: 10s
+          value: value2
+    sets:
+      values:
+        set1:
+          values:
+            a:
+              expiration: 10s
+            b:
+            c:
+        set3:
+          values:
+            x:
+              expiration: 5s
+            y:
+    maps:
+      values:
+        map1:
+          values:
+            a: 1
+            b: 2
+        map2:
+          values:
+            c: 3
+            d: 4
+  2:
+    keys:
+      values:
+        key3:
+          value: value3
+        key4:
+          expiration: 5s
+          value: value4
+    sets:
+      values:
+        set2:
+          values:
+            d:
+            e:
+              expiration: 5s
+            f:
+    maps:
+      values:
+        map3:
+          values:
+            c: 3
+            d: 4
+        map4:
+          values:
+            e: 10
+            f: 11
+

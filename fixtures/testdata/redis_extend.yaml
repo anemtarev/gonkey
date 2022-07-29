@@ -1,0 +1,68 @@
+templates:
+  keys:
+    - $name: parentKeys
+      values:
+        a:
+          value: 1
+        b:
+          value: 2
+    - $name: childKeys
+      $extend: parentKeys
+      values:
+        c:
+          value: 3
+        d:
+          value: 4
+  sets:
+    - $name: parentSet
+      values:
+        a:
+          expiration: 10s
+        b:
+    - $name: childSet
+      $extend: parentSet
+      values:
+        c:
+  maps:
+    - $name: parentMap
+      values:
+        a1: 1
+        b1: 2
+    - $name: childMap
+      $extend: parentMap
+      values:
+        c1: 3
+
+databases:
+  1:
+    keys:
+      $extend: childKeys
+      values:
+        key1:
+          value: value1
+        key2:
+          expiration: 10s
+          value: value2
+    sets:
+      values:
+        set1:
+          $extend: childSet
+          values:
+            d:
+        set2:
+          values:
+            x:
+            y:
+              expiration: 10s
+    maps:
+      values:
+        map1:
+          $extend: childMap
+          $name: baseMap
+          values:
+            a: 1
+            b: 2
+        map2:
+          values:
+            c: 3
+            d: 4
